@@ -5,12 +5,17 @@ import ResetStyle from '~/application/styles/reset';
 import theme from '~/application/styles/theme';
 import '~/application/styles/global.css';
 
+import Navigation from '~/application/shared/Navigation';
+import Footer from '~/application/shared/Footer';
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <ResetStyle />
       <ThemeProvider theme={theme}>
+        <Navigation />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );
