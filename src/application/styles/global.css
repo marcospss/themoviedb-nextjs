@@ -3,3 +3,7 @@ body {
   width: 100%;
   height: 100%;
 }
+
+main.main-content {
+  margin: 5rem 2rem;
+}

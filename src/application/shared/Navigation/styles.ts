@@ -8,7 +8,7 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   top: 0;
-  padding:0.5rem;
+  padding: 1rem;
   position: fixed;
   background-color: #fff;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -32,7 +32,7 @@ export const List = styled.ul`
   flex-direction: row;
   flex-grow: 1;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-left: auto;
 `;
 

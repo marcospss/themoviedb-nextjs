@@ -6,7 +6,7 @@ export const Container = styled.footer`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   background-color: ${({ theme: { colors } }) => colors.fourth};
   color: #fff;
   h2 {
@@ -18,5 +18,8 @@ export const Container = styled.footer`
     &:hover {
       text-decoration: underline;
     }
+  }
+  p {
+    margin: 0.5rem 0;
   }
 `;

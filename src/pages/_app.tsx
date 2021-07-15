@@ -14,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <ResetStyle />
       <ThemeProvider theme={theme}>
         <Navigation />
-        <Component {...pageProps} />
+        <main className="main-content">
+          <Component {...pageProps} />
+        </main>
         <Footer />
       </ThemeProvider>
     </>

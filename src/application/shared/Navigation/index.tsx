@@ -6,7 +6,11 @@ import { Header, Logo, Nav, List, NavItem } from './styles';
 export default function Navigation(): JSX.Element {
   return (
     <Header>
-      <Logo>Next.js TypeScript!</Logo>
+      <Logo>
+        <Link href="/">
+          <a>The Movie Database</a>
+        </Link>
+      </Logo>
       <Nav>
         <List>
           <NavItem>
