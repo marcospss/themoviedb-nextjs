@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ImageWrapper from '~/application/shared/components/ImageWrapper';
+import Image from '~/application/shared/components/Image';
 import { Card, Header, Overview } from './style';
 
 type CardProps = {
@@ -28,7 +28,7 @@ const CardLarge = ({
       <Header>
         <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
           <a>
-            <ImageWrapper alt={title} height={height} width={width} src={srcImage} />
+            <Image alt={title} height={height} width={width} src={srcImage} />
           </a>
         </Link>
         <h1>
