@@ -9,6 +9,8 @@ type CardProps = {
   overview: string;
   mediaType: string;
   displayOverview: boolean;
+  width: number;
+  height: number;
 };
 
 const CardLarge = ({
@@ -18,13 +20,15 @@ const CardLarge = ({
   mediaType,
   overview,
   title,
+  height,
+  width,
 }: CardProps): JSX.Element => {
   return (
     <Card>
       <Header>
         <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
           <a>
-            <ImageWrapper alt={title} height="100%" width="100%" src={srcImage} />
+            <ImageWrapper alt={title} height={height} width={width} src={srcImage} />
           </a>
         </Link>
         <h1>

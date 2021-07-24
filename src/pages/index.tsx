@@ -17,6 +17,14 @@ const displayOverview = (index: number): boolean => {
   return index >= 1 && index <= 4 ? true : false;
 };
 
+const setWidth = (index: number): number => {
+  return index < 1 ? 780 : 300;
+};
+
+const setHeight = (index: number): number => {
+  return index < 1 ? 439 : 169;
+};
+
 const IndexPage: NextPage<HomeProps> = ({ popular }) => {
   return (
     <>
@@ -29,8 +37,10 @@ const IndexPage: NextPage<HomeProps> = ({ popular }) => {
             displayOverview={displayOverview(index)}
             mediaType="movie"
             overview={item.overview}
-            srcImage={`https://image.tmdb.org/t/p/w780${item.backdrop_path}`}
+            srcImage={item.backdrop_path}
             title={item.title}
+            height={setHeight(index)}
+            width={setWidth(index)}
           />
         ))}
       </Grid>
