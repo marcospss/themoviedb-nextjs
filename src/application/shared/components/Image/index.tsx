@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageNext from 'next/image';
 
 import imageApi from '~/infrastructure/settings/imageApi';
 
@@ -27,9 +27,9 @@ const shimmer = (w: number, h: number) => `
 const toBase64 = (str: string): string =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
-const ImageWrapper = ({ alt, height, src, width }: ImageProps): JSX.Element => {
+const Image = ({ alt, height, src, width }: ImageProps): JSX.Element => {
   return src === 'null' ? (
-    <Image
+    <ImageNext
       width={width}
       height={height}
       layout="responsive"
@@ -39,7 +39,7 @@ const ImageWrapper = ({ alt, height, src, width }: ImageProps): JSX.Element => {
       blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
     />
   ) : (
-    <Image
+    <ImageNext
       width={width}
       height={height}
       layout="responsive"
@@ -51,4 +51,4 @@ const ImageWrapper = ({ alt, height, src, width }: ImageProps): JSX.Element => {
   );
 };
 
-export default ImageWrapper;
+export default Image;

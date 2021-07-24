@@ -28,7 +28,12 @@ const setHeight = (index: number): number => {
 const IndexPage: NextPage<HomeProps> = ({ popular }) => {
   return (
     <>
-      <Head />
+      <Head
+        title="The Movie Database (TMDb) | Is a community built movie and TV database."
+        description="The Movie Database (TMDb) is a popular, user editable database for movies and TV shows."
+        keywords="Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast"
+        image="/static/imdb.png"
+      />
       <Grid>
         {popular?.results?.map((item, index: number) => (
           <CardLarge
