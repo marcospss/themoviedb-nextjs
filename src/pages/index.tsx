@@ -55,14 +55,20 @@ const IndexPage: NextPage<HomeProps> = ({ popular }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const { data } = await media.popular({ page: 1 });
+    const { data: popular } = await media.popular({ page: 1 });
     return {
       props: {
-        popular: data,
+        popular,
+        error: null,
       },
     };
   } catch (error) {
-    return { props: { error: error?.response?.data } };
+    return {
+      props: {
+        popular: null,
+        error: error?.response?.data,
+      },
+    };
   }
 };
 

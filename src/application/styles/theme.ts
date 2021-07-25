@@ -24,5 +24,11 @@ export default {
     secondary: '#e2e8f0',
     third: '#1a202c',
     fourth: '#0b2239',
+    blueGray: '#34495e',
+    blueGrayDarken: '#2c3e50',
+    blue: '#3498db',
+    blueDarken: '#2980b9',
+    green: '#1abc9c',
+    greenDarken: '#16a085',
   },
 };
