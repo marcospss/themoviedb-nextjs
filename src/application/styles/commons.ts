@@ -4,12 +4,11 @@ export const Grid = styled.div`
   display: grid;
   height: 100%;
   grid-template-columns: 1fr;
-  column-gap: 1rem;
+  column-gap: 1.5rem;
   row-gap: 1.5rem;
   padding: 0 2rem;
   @media screen and (min-width: 600px) and (max-width: 801px) {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
     & > article {
       padding: 0;
       &:nth-child(1) {
@@ -20,7 +19,6 @@ export const Grid = styled.div`
   }
   @media screen and (min-width: 801px) and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1rem;
     & > article {
       padding: 0;
       &:nth-child(1) {
@@ -31,7 +29,6 @@ export const Grid = styled.div`
   }
   @media (min-width: 1024px) {
     grid-template-columns: repeat(5, 1fr);
-    column-gap: 1rem;
     & > article {
       padding: 0;
       &:nth-child(1) {

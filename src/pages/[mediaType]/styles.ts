@@ -19,8 +19,8 @@ export const Breadcrumb = styled.nav`
   margin: 0;
   position: absolute;
   padding: 0;
-  background-color: #131a2038;
-  color: #fff;
+  background-color: #ffffffba;
+  color: ${({ theme: { colors } }) => colors.secondary};
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   z-index: 1;
   ul {
@@ -35,13 +35,15 @@ export const Breadcrumb = styled.nav`
       font-weight: bold;
       font-size: 1.2rem;
       color: ${({ theme: { colors } }) => colors.primary};
+      text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
       a {
-        color: #131a20;
+        color: ${({ theme: { colors } }) => colors.secondary};
         font-weight: bold;
+        text-shadow: none;
         display: block;
-        background: ${({ theme: { colors } }) => colors.blue};
+        background: ${({ theme: { colors } }) => colors.primary};
         text-decoration: none;
-        text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.5);
+
         position: relative;
         height: 40px;
         line-height: 40px;
@@ -52,13 +54,13 @@ export const Breadcrumb = styled.nav`
       }
       &:nth-child(even) {
         a {
-          background-color: ${({ theme: { colors } }) => colors.blueDarken};
+          background-color: ${({ theme: { colors } }) => colors.primary};
           &:before {
-            border-color: ${({ theme: { colors } }) => colors.blueDarken};
+            border-color: ${({ theme: { colors } }) => colors.primary};
             border-left-color: transparent;
           }
           &:after {
-            border-left-color: ${({ theme: { colors } }) => colors.blueDarken};
+            border-left-color: ${({ theme: { colors } }) => colors.primary};
           }
         }
       }
@@ -79,14 +81,14 @@ export const Breadcrumb = styled.nav`
             border: none;
           }
           &:hover {
-            background-color: ${({ theme: { colors } }) => colors.blue};
+            background-color: ${({ theme: { colors } }) => colors.primary};
 
             &:before {
-              border-color: ${({ theme: { colors } }) => colors.blue};
+              border-color: ${({ theme: { colors } }) => colors.primary};
               border-left-color: transparent;
             }
             &:after {
-              border-left-color: ${({ theme: { colors } }) => colors.blue};
+              border-left-color: ${({ theme: { colors } }) => colors.primary};
             }
           }
         }
@@ -97,7 +99,7 @@ export const Breadcrumb = styled.nav`
           content: '';
           position: absolute;
           top: 0;
-          border: 0 solid ${({ theme: { colors } }) => colors.blue};
+          border: 0 solid ${({ theme: { colors } }) => colors.primary};
           border-width: 20px 10px;
           width: 0;
           height: 0;
@@ -109,16 +111,16 @@ export const Breadcrumb = styled.nav`
         &:after {
           left: 100%;
           border-color: transparent;
-          border-left-color: ${({ theme: { colors } }) => colors.blue};
+          border-left-color: ${({ theme: { colors } }) => colors.primary};
         }
         &:hover {
-          background-color: ${({ theme: { colors } }) => colors.green};
+          background-color: ${({ theme: { colors } }) => colors.blueDarken};
           &:before {
-            border-color: ${({ theme: { colors } }) => colors.green};
+            border-color: ${({ theme: { colors } }) => colors.blueDarken};
             border-left-color: transparent;
           }
           &:after {
-            border-left-color: ${({ theme: { colors } }) => colors.green};
+            border-left-color: ${({ theme: { colors } }) => colors.blueDarken};
           }
         }
         &:active {
