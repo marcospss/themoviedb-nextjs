@@ -7,6 +7,7 @@ import CardPoster from '~/application/shared/components/CardPoster';
 import { Media } from '~/infrastructure/services';
 import { MovieResults, MoviesDetails, StatusErrors } from '~/infrastructure/models';
 import imageApi from '~/infrastructure/settings/imageApi';
+import * as C from '~/application/styles/commons';
 import * as S from './styles';
 
 type DetailsProps = {
@@ -69,7 +70,7 @@ const DetailsPage: NextPage<DetailsProps> = ({ details, recommendations }) => {
         {recommendations && (
           <S.Recommendations>
             <S.RecommendationsTitle>Recommendations</S.RecommendationsTitle>
-            <S.GridList>
+            <C.GridList>
               {recommendations?.results?.map((movie) => (
                 <CardPoster
                   key={movie.id}
@@ -81,7 +82,7 @@ const DetailsPage: NextPage<DetailsProps> = ({ details, recommendations }) => {
                   hideOverflowTitle={false}
                 />
               ))}
-            </S.GridList>
+            </C.GridList>
           </S.Recommendations>
         )}
       </S.Container>

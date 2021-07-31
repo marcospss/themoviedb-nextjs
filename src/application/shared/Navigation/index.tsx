@@ -18,6 +18,11 @@ export default function Navigation(): JSX.Element {
               <a>Home</a>
             </Link>
           </NavItem>
+          <NavItem>
+            <Link href="/discover">
+              <a>Discover</a>
+            </Link>
+          </NavItem>
         </List>
       </Nav>
     </Header>

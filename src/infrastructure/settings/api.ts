@@ -1,6 +1,6 @@
 export const api = {
   baseURL: 'https://api.themoviedb.org/3',
-  apikey: process.env.API_KEY,
+  apikey: process.env.API_KEY || process.env.NEXT_PUBLIC_API_KEY,
   language: 'en-US',
 };
 

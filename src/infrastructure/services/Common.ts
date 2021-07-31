@@ -4,8 +4,8 @@ import { Genres, Credits } from '~/infrastructure/models/common';
 import { ParamsUrl } from '~/infrastructure/models/api';
 
 export class Common {
-  genre({ mediaType }: ParamsUrl): Promise<AxiosResponse<Genres[]>> {
-    return axios.get<Genres[]>(`/genre/${mediaType}/list?${paramsDefault}`);
+  genre({ mediaType }: ParamsUrl): Promise<AxiosResponse<Genres>> {
+    return axios.get<Genres>(`/genre/${mediaType}/list?${paramsDefault}`);
   }
 
   credits({ mediaType, mediaId }: ParamsUrl): Promise<AxiosResponse<Credits[]>> {

@@ -30,5 +30,6 @@ export default {
     blueDarken: '#2980b9',
     green: '#1abc9c',
     greenDarken: '#16a085',
+    white: '#ffffff',
   },
 };

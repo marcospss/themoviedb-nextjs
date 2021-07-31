@@ -6,10 +6,12 @@ import { ParamsUrl } from '~/infrastructure/models/api';
 export class Media {
   discover({
     sortBy = 'popularity.desc',
+    withGenres = '',
+    year = new Date().getFullYear(),
     page = 1,
   }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(
-      `/discover/movie?${paramsDefault}&page=${page}&sort_by=${sortBy}&include_adult=false&include_video=false`
+      `/discover/movie?${paramsDefault}&page=${page}&sort_by=${sortBy}&with_genres=${withGenres}&year=${year}&include_adult=false&include_video=false`
     );
   }
 

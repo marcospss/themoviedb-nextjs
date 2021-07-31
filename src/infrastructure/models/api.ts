@@ -4,6 +4,8 @@ export type ParamsUrl = {
   page?: number;
   query?: string;
   sortBy?: string;
+  withGenres?: string;
+  year?: number;
 };
 
 export type StatusErrors = {

@@ -28,7 +28,7 @@ const toBase64 = (str: string): string =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
 const Image = ({ alt, height, src, width }: ImageProps): JSX.Element => {
-  return src === 'null' ? (
+  return src === null ? (
     <ImageNext
       width={width}
       height={height}

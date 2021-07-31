@@ -1,4 +1,4 @@
-import { Genres, ProductionCompanies } from './common';
+import { Genre, ProductionCompanies } from './common';
 
 type ProductionCountries = {
   iso_3166_1: string;
@@ -32,7 +32,7 @@ export type MoviesDetails = {
   backdrop_path: string | null;
   belongs_to_collection: null;
   budget: number;
-  genres: Genres[];
+  genres: Genre[];
   homepage: string | null;
   id: number;
   imdb_id: string | null;
