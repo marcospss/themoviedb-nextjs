@@ -67,7 +67,7 @@ const DetailsPage: NextPage<DetailsProps> = ({ details, recommendations }) => {
           </S.Info>
         </S.Header>
         <S.Overview>{details.overview}</S.Overview>
-        {recommendations && (
+        {!!recommendations?.results?.length && (
           <S.Recommendations>
             <S.RecommendationsTitle>Recommendations</S.RecommendationsTitle>
             <C.GridList>
@@ -95,6 +95,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const mediaId = params?.mediaId?.toString();
     const { data: details } = await media.details({ mediaId });
     const { data: recommendations } = await media.recommendations({ mediaId });
+    console.log(recommendations);
     return {
       props: {
         details,
