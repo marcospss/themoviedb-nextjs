@@ -95,7 +95,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const mediaId = params?.mediaId?.toString();
     const { data: details } = await media.details({ mediaId });
     const { data: recommendations } = await media.recommendations({ mediaId });
-    console.log(recommendations);
     return {
       props: {
         details,

@@ -25,6 +25,10 @@ export const Nav = styled.nav`
   flex-direction: row;
   flex-grow: 1;
   align-items: center;
+  margin-top: 0.6rem;
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+  }
 `;
 
 export const List = styled.ul`

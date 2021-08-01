@@ -164,13 +164,20 @@ export const FigurePoster = styled.figure`
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: block;
+  }
 `;
 
 export const Info = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 10px;
-  margin: 10px 0 10px 220px;
+  margin: 10px;
+  @media screen and (min-width: 600px) {
+    margin: 10px 0 10px 220px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -190,9 +197,12 @@ export const Runtime = styled.p`
 `;
 
 export const Overview = styled.p`
-  margin: 20px 40px;
   font-size: 1rem;
   line-height: 20px;
+  margin: 0 20px;
+  @media screen and (min-width: 600px) {
+    margin: 20px 40px;
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -205,9 +215,12 @@ export const Recommendations = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #fff;
   border-radius: 1rem;
+  @media screen and (min-width: 600px) {
+    padding: 2rem;
+  }
 `;
 
 export const RecommendationsTitle = styled.h2`
