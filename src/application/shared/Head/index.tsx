@@ -22,8 +22,8 @@ const Head = ({ description, image, keywords, title }: HeadProps): JSX.Element =
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="mask-icon" href="/favicon-mask.svg" color="#000000" />
-      <link rel="preconnect" href="https://api.themoviedb.org/3" />
-      <link rel="preconnect" href="https://image.tmdb.org" />
+      <link rel="preload" href="https://api.themoviedb.org/3" />
+      <link rel="preload" href="https://image.tmdb.org" />
       <link rel="canonical" href={`${process.env.BASE_PATH}${router.asPath}`} />
       <meta property="og:url" content={`${process.env.BASE_PATH}${router.asPath}`} />
       <meta property="og:title" content={title} />
