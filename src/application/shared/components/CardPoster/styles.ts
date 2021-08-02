@@ -30,7 +30,7 @@ export const Content = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
 `;
 export const Title = styled.h2`
   font-size: 0.9rem;

@@ -25,17 +25,25 @@ const CardPoster = ({
     <S.Card>
       <S.Poster>
         <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
-          <a>
+          <a title={title}>
             <Image alt={title} height={136} width={92} src={src} />
           </a>
         </Link>
       </S.Poster>
       <S.Content>
-        <S.Title>{shortTitle}</S.Title>
-        <S.Overview>{overview}</S.Overview>
+        <S.Title>
+          <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
+            <a title={title}>{shortTitle}</a>
+          </Link>
+        </S.Title>
+        <S.Overview>
+          <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
+            <a title={title}>{overview}</a>
+          </Link>
+        </S.Overview>
         <S.LearnMore>
           <Link href={`/${mediaType}/[mediaId]`} as={`/${mediaType}/${id}`}>
-            <a>Learn More</a>
+            <a title={title}>See the full content</a>
           </Link>
         </S.LearnMore>
       </S.Content>
