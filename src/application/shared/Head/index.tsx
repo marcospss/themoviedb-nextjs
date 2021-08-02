@@ -24,8 +24,8 @@ const Head = ({ description, image, keywords, title }: HeadProps): JSX.Element =
       <link rel="mask-icon" href="/favicon-mask.svg" color="#000000" />
       <link rel="preload" href="https://api.themoviedb.org/3" />
       <link rel="preload" href="https://image.tmdb.org" />
-      <link rel="canonical" href={`${process.env.BASE_PATH}${router.asPath}`} />
-      <meta property="og:url" content={`${process.env.BASE_PATH}${router.asPath}`} />
+      <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_PATH}${router.asPath}`} />
+      <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_PATH}${router.asPath}`} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

@@ -4,7 +4,7 @@ const runtimeCaching = require('next-pwa/cache');
 
 module.exports = withPWA({
   reactStrictMode: true,
-  basepath: process.env.BASE_PATH,
+  basepath: process.env.NEXT_PUBLIC_BASE_PATH,
   images: {
     domains: ['image.tmdb.org'],
   },
