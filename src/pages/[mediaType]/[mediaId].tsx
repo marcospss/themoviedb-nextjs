@@ -8,7 +8,7 @@ import { Media } from '~/infrastructure/services';
 import { MovieResults, MoviesDetails, StatusErrors } from '~/infrastructure/models';
 import imageApi from '~/infrastructure/settings/imageApi';
 import * as C from '~/application/styles/commons';
-import * as S from './styles';
+import * as S from '~/application/styles/pages/details';
 
 type DetailsProps = {
   details: MoviesDetails;

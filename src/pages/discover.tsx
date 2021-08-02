@@ -1,50 +1,14 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { useState, FocusEvent } from 'react';
-import styled from 'styled-components';
 
 import Head from '~/application/shared/Head';
 import useSWRInfinite from '~/application/hooks/useSWRInfinite';
 import { paramsDefault } from '~/infrastructure/settings/api';
 import { Media, Common } from '~/infrastructure/services';
 import { Genre, MovieItem } from '~/infrastructure/models';
-import * as C from '~/application/styles/commons';
 import CardPoster from '~/application/shared/components/CardPoster';
-
-const Filters = styled(C.GridList)`
-  margin-bottom: 2em;
-  padding-bottom: 1em;
-  border-bottom: 2px solid ${({ theme: { colors } }) => colors.primary};
-`;
-
-const Input = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  margin-right: 1rem;
-  width: 100%;
-  label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  select {
-    width: 100%;
-    border: 2px solid ${({ theme: { colors } }) => colors.primary};
-    border-radius: 0.25em;
-    padding: 0.25em 0.5em;
-    font-size: 1rem;
-    cursor: pointer;
-    line-height: 1.1;
-    background-color: ${({ theme: { colors } }) => colors.white};
-    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-  }
-  button {
-    font-weight: bold;
-    background-color: ${({ theme: { colors } }) => colors.secondary};
-    padding: 0.8rem 2rem;
-    border-radius: 0.5rem;
-    width: fit-content;
-  }
-`;
+import * as C from '~/application/styles/commons';
+import * as S from '~/application/styles/pages/discover';
 
 type DiscoverProps = {
   years: string[];
@@ -131,8 +95,8 @@ const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) =
         keywords="Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast"
         image="/static/imdb.png"
       />
-      <Filters>
-        <Input>
+      <S.Filters>
+        <S.Input>
           <label htmlFor="year">Release Dates</label>
           <select
             defaultValue={searchValue.year}
@@ -146,8 +110,8 @@ const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) =
               </option>
             ))}
           </select>
-        </Input>
-        <Input>
+        </S.Input>
+        <S.Input>
           <label htmlFor="sortBy">Sort Results By</label>
           <select
             defaultValue={searchValue.sortBy}
@@ -161,8 +125,8 @@ const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) =
               </option>
             ))}
           </select>
-        </Input>
-        <Input>
+        </S.Input>
+        <S.Input>
           <label htmlFor="withGenres">Genres</label>
           <select
             defaultValue={searchValue.withGenres}
@@ -176,13 +140,13 @@ const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) =
               </option>
             ))}
           </select>
-        </Input>
-        <Input>
+        </S.Input>
+        <S.Input>
           <button type="button" onClick={triggerSearch}>
             Search
           </button>
-        </Input>
-      </Filters>
+        </S.Input>
+      </S.Filters>
       {error && (
         <C.Alert className="danger">
           <p>
