@@ -1,14 +1,32 @@
 module.exports = {
-    roots: ['<rootDir>'],
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
-    testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-    transform: {
-      '^.+\\.(ts|tsx)$': 'babel-jest',
-    },
-    watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
-    moduleNameMapper: {
-      '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-      '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
-    },
-  }
+  roots: ['<rootDir>'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  testPathIgnorePatterns: [
+    '<rootDir>/.husky/',
+    '<rootDir>/.next/',
+    '<rootDir>/.vercel/',
+    '<rootDir>/.vscode/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/coverage/',
+    '<rootDir>/public/',
+    '<rootDir>/src/application/hooks/',
+    '<rootDir>/src/application/shared/',
+    '<rootDir>/src/application/styles/',
+    '<rootDir>/src/infrastructure/models/',
+    '<rootDir>/src/infrastructure/settings/',
+    '<rootDir>/src/infrastructure/index.ts',
+    '<rootDir>/src/pages/_app.tsx',
+    '<rootDir>/src/pages/_document.tsx',
+  ],
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'babel-jest',
+  },
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  moduleNameMapper: {
+    '~/(.*)': '<rootDir>/src/$1',
+    '@mocks/(.*)': '<rootDir>/__mocks__/$1',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
+  },
+};

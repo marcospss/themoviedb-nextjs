@@ -8,14 +8,14 @@ export class Media {
     sortBy = 'popularity.desc',
     withGenres = '',
     year = new Date().getFullYear(),
-    page = 1,
+    page,
   }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(
       `/discover/movie?${paramsDefault}&page=${page}&sort_by=${sortBy}&with_genres=${withGenres}&year=${year}&include_adult=false&include_video=false`
     );
   }
 
-  search({ query, page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  search({ query, page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(
       `/search/movie?${paramsDefault}&page=${page}&query=${query}&include_adult=false`
     );
@@ -25,29 +25,29 @@ export class Media {
     return axios.get<MoviesDetails>(`/movie/${mediaId}?${paramsDefault}`);
   }
 
-  recommendations({ mediaId, page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  recommendations({ mediaId, page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(
       `/movie/${mediaId}/recommendations?${paramsDefault}&page=${page}`
     );
   }
 
-  similar({ mediaId, page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  similar({ mediaId, page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(`/movie/${mediaId}/similar?${paramsDefault}&page=${page}`);
   }
 
-  nowPlaying({ page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  nowPlaying({ page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(`/movie/now_playing?${paramsDefault}&page=${page}`);
   }
 
-  popular({ page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  popular({ page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(`/movie/popular?${paramsDefault}&page=${page}`);
   }
 
-  topRated({ page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  topRated({ page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(`/movie/top_rated?${paramsDefault}&page=${page}`);
   }
 
-  upcoming({ page = 1 }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
+  upcoming({ page }: ParamsUrl): Promise<AxiosResponse<MovieResults>> {
     return axios.get<MovieResults>(`/movie/upcoming?${paramsDefault}&page=${page}`);
   }
 }

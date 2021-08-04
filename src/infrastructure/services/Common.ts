@@ -8,7 +8,7 @@ export class Common {
     return axios.get<Genres>(`/genre/${mediaType}/list?${paramsDefault}`);
   }
 
-  credits({ mediaType, mediaId }: ParamsUrl): Promise<AxiosResponse<Credits[]>> {
-    return axios.get<Credits[]>(`/${mediaType}/${mediaId}/credits?${paramsDefault}`);
+  credits({ mediaType, mediaId }: ParamsUrl): Promise<AxiosResponse<Credits>> {
+    return axios.get<Credits>(`/${mediaType}/${mediaId}/credits?${paramsDefault}`);
   }
 }
