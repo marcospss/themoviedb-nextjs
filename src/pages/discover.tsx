@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { useState, FocusEvent } from 'react';
 
 import Head from '~/application/shared/Head';
@@ -51,6 +52,7 @@ const media = new Media();
 const common = new Common();
 
 const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) => {
+  const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [searchValue, setSearchValue] = useState<SearchProps>({
     sortBy: 'popularity.desc',
@@ -94,6 +96,7 @@ const DiscoverPage: NextPage<DiscoverProps> = ({ years, sortOptions, genres }) =
         description="The Movie Database (TMDb) is a popular, user editable database for movies and TV shows."
         keywords="Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast"
         image="/static/imdb.png"
+        router={router}
       />
       <S.Filters>
         <S.Input>

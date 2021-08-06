@@ -1,14 +1,14 @@
 import NextHead from 'next/head';
-import { useRouter } from 'next/router';
+import { NextRouter } from 'next/router';
 
 type HeadProps = {
   title: string;
   description: string;
   keywords: string;
   image: string;
+  router: NextRouter;
 };
-const Head = ({ description, image, keywords, title }: HeadProps): JSX.Element => {
-  const router = useRouter();
+const Head = ({ description, image, keywords, title, router }: HeadProps): JSX.Element => {
   return (
     <NextHead>
       <title>{title}</title>

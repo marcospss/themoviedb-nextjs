@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Head from '~/application/shared/Head';
 import Image from '~/application/shared/components/Image';
@@ -29,6 +30,7 @@ const convertMinutesToTime = (data: number | null): string => {
 };
 
 const DetailsPage: NextPage<DetailsProps> = ({ details, recommendations }) => {
+  const router = useRouter();
   const backdropPath = details?.backdrop_path ? details.backdrop_path : 'null';
   const posterPath = details?.poster_path ? details.poster_path : 'null';
   const genres = details?.genres.map((genre) => genre.name).join(' | ');
@@ -40,6 +42,7 @@ const DetailsPage: NextPage<DetailsProps> = ({ details, recommendations }) => {
         description={details.overview}
         keywords={keywords}
         image={`${imageApi.secure_base_url}w780${details.backdrop_path}`}
+        router={router}
       />
       <S.Container>
         <S.Breadcrumb>
@@ -94,7 +97,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
     const mediaId = params?.mediaId?.toString();
     const { data: details } = await media.details({ mediaId });
-    const { data: recommendations } = await media.recommendations({ mediaId });
+    const { data: recommendations } = await media.recommendations({ mediaId, page: 1 });
     return {
       props: {
         details,
