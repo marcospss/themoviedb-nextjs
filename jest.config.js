@@ -1,5 +1,6 @@
 module.exports = {
   roots: ['<rootDir>'],
+  testEnvironment: 'jsdom',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: [
     '<rootDir>/.husky/',
@@ -10,14 +11,15 @@ module.exports = {
     '<rootDir>/coverage/',
     '<rootDir>/public/',
     '<rootDir>/src/application/hooks/',
-    '<rootDir>/src/application/shared/',
     '<rootDir>/src/application/styles/',
     '<rootDir>/src/infrastructure/models/',
     '<rootDir>/src/infrastructure/settings/',
     '<rootDir>/src/infrastructure/index.ts',
-    '<rootDir>/src/pages/_app.tsx',
-    '<rootDir>/src/pages/_document.tsx',
+    '<rootDir>/src/pages/',
   ],
+  bail: 1,
+  clearMocks: true,
+  collectCoverage: true,
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
@@ -29,4 +31,5 @@ module.exports = {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
 };
