@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import Head from '~/application/shared/Head';
 
 import { Media } from '~/infrastructure/services';
@@ -24,8 +25,8 @@ const setWidth = (index: number): number => {
 const setHeight = (index: number): number => {
   return index < 1 ? 439 : 169;
 };
-
 const IndexPage: NextPage<HomeProps> = ({ popular }) => {
+  const router = useRouter();
   return (
     <>
       <Head
@@ -33,6 +34,7 @@ const IndexPage: NextPage<HomeProps> = ({ popular }) => {
         description="The Movie Database (TMDb) is a popular, user editable database for movies and TV shows."
         keywords="Movies, TV Shows, Streaming, Reviews, API, Actors, Actresses, Photos, User Ratings, Synopsis, Trailers, Teasers, Credits, Cast"
         image="/static/imdb.png"
+        router={router}
       />
       <Grid>
         {popular?.results?.map((item, index: number) => (
